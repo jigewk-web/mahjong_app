@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  php:
+    build: ./php 
+    container_name: mahjong_php-apache
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - "8080:80"
+    working_dir: /var/www/html
+    command: apache2-foreground
+
+  mysql:
+    image: mysql:8.0
+    container_name: mahjong_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mahjong
+      MYSQL_USER: mahjong
+      MYSQL_PASSWORD: mahjong
+    ports:
+      - "3307:3306"
+    volumes:
+      - mahjong_mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: mahjong_phpmyadmin
+    environment:
+      PMA_HOST: mahjong_mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mahjong_mysql_data:
