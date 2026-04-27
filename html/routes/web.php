@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\HelpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,6 @@ Route::post('/players', [PlayerController::class, 'store'])->name('players.store
 Route::get('/games/{game}/edit', [GameController::class, 'edit'])->name('games.edit');
 Route::put('/games/{game}', [GameController::class, 'update'])->name('games.update');
 Route::delete('/games/{game}', [GameController::class, 'destroy'])->name('games.destroy');
+
+//使い方
+Route::get('/help', [HelpController::class, 'index'])->name('help.index');

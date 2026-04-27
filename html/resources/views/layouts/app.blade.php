@@ -14,6 +14,7 @@
             <a href="{{ route('games.index') }}">対局一覧</a>
             <a href="{{ route('games.create') }}">対局作成</a>
             <a href="{{ route('players.create') }}">プレイヤー登録</a>
+            <a href="{{ route('help.index') }}">🔰使い方</a>
         </nav>
 
     </header>

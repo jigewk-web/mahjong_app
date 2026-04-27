@@ -329,3 +329,25 @@ button {
 .error-message {
     color: red;
 }
+/* 使い方 */
+.help-card {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.help-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.help-section h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.help-section p,
+.help-section li {
+    font-size: 14px;
+    line-height: 1.6;
+}
